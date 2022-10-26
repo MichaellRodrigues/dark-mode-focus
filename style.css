@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #323238;
+  --bc-primary: #e5e5e5;
+  --card-color: #d6d6d8;
+  --hover-card: #02799d;
+  --hover-text: #ffffff;
+
+  font-size: 62.5%;
+}
+
+body {
+  display: grid;
+  background-color: var(--bc-primary);
+  font-family: 'Roboto', sans-serif;
+  color: var(--primary-color);
+
+  min-height: 100vh;
+}
+
+.play svg path,
+.stop svg path,
+.pause svg path,
+.set svg path,
+.up svg path,
+.down svg path,
+.florest svg path,
+.rain svg path,
+.cofe svg path,
+.fire svg path {
+  fill: var(--primary-color);
+}
+button svg {
+  width: clamp(3.2rem, 2rem + 12vw, 6.4rem);
+}
+button {
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
+}
+
+main {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+}
+
+.hide {
+  display: none;
+}
+
+.sideA {
+  height: 38rem;
+  width: 60rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10rem;
+}
+
+.sideB {
+  height: 38rem;
+  width: 36rem;
+}
+
+#timer {
+  font-size: 13rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 3rem;
+
+  width: 31rem;
+  height: 4.8rem;
+}
+
+.button-card {
+  background: var(--card-color);
+  border-radius: 2.4rem;
+  width: 13.8rem;
+  height: 15.2rem;
+
+  margin-right: 3rem;
+  margin-bottom: 3rem;
+}
+.button-card svg {
+  display: flex;
+  margin: auto;
+}
+
+.button-card:focus,
+.button-card:hover {
+  background: var(--hover-card);
+  color: white;
+}
+
+.sounds button:focus svg path,
+.sounds button:hover svg path {
+  fill: white;
+}
+
+@media (max-width: 790px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
+
+  .sideB {
+    align-items: center;
+    padding-left: 2rem;
+  }
+}
+
+.light-icon {
+  position: absolute;
+  right: 3rem;
+  top: 3rem;
+}
+
+.light-icon:hover svg path {
+  opacity: 0.5;
+}
+
+.sounds button:hover input[type='range'],
+.sounds button:focus input[type='range'] {
+  background: rgba(255, 255, 255, 0.4);
+  background-image: linear-gradient(white, white);
+}
+
+.sounds button:hover input[type='range']::-webkit-slider-thumb,
+.sounds button:focus input[type='range']::-webkit-slider-thumb {
+  background: white;
+}
+
+input[type='range']:focus {
+  box-shadow: 0 0 1px 1px #4b81dd86;
+  outline: none;
+}
+
+input[type='range'] {
+  -webkit-appearance: none; /* esconde o slider para conseguir editar o slider */
+  margin-top: 3.2rem;
+  width: 9rem;
+  height: 0.4rem;
+  background: rgba(153, 153, 153, 0.6); /* cor que fica depois da bolinha */
+  border-radius: 0.5rem;
+  background-image: linear-gradient(#323238, #323238);
+}
+
+/* Input Thumb - Bolinha/Dedão/Arrastador */
+
+/* Estilos para webKit/Blink */
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background: #323238;
+  box-shadow: 0 0 0.2rem 0 #555;
+  transition: background 0.3s ease-in-out;
+}
+
+/* input[type='range']::-webkit-slider-thumb:hover 
+como fazer o hover na bolinha ^ */
+
+/* Input Track */
+input[type='range']::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+.dark-mode {
+  background-color: #121214;
+}
+
+.dark-mode span {
+  color: white;
+}
+.dark-mode .page {
+  color: white;
+}
+
+.dark-mode .controls button,
+.dark-mode .light-icon {
+  background: none;
+}
+
+.dark-mode button svg path {
+  fill: white;
+}
+
+.dark-mode .sounds button {
+  background-color: #29292e;
+}
+
+.dark-mode .sounds button:hover,
+.dark-mode .sounds button:focus {
+  background-color: #0a3442;
+}
+
+/* VOLUME */
+
+.dark-mode input[type='range'] {
+  background: rgba(255, 255, 255, 0.4);
+  background-image: linear-gradient(white, white);
+}
+
+.dark-mode input[type='range']::-webkit-slider-thumb {
+  background: white;
+}
